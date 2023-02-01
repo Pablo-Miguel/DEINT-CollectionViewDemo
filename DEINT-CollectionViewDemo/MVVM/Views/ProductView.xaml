@@ -11,7 +11,15 @@
     
     <ScrollView>
         <VerticalStackLayout>
+            <!--<CollectionView SelectionChanged="CollectionView_SelectionChanged" SelectionMode="Single"/>-->
+            <!--
+                SelectedItem="{Binding ProductoSeleccionado}"
+                SelectedItems="{Binding ProductoSeleccionado}"
+            -->
             <CollectionView 
+                SelectionChangedCommand="{Binding ProductChanged}"
+                SelectedItem="{Binding ProductoSeleccionado}"
+                SelectionMode="Single"
                 ItemsSource="{Binding Products}" 
                 ItemTemplate="{DynamicResource ProductTemplate}"> <!--Header="Products" Footer="Fin"-->
                 <CollectionView.ItemsLayout>

@@ -5,14 +5,20 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DEINT_CollectionViewDemo.MVVM.ViewModels
 {
     public class ProductViewModel
     {
+        public ICommand ProductChanged { get; set; }
+        public Product ProductoSeleccionado { get; set; }
         public ObservableCollection<Product> Products { get; set; }
         public ProductViewModel()
         {
+            ProductChanged = new Command(() => {
+                var productoseleccionado = ProductoSeleccionado;
+            });
             Products = new ObservableCollection<Product>() {
                 new Product
                 {
