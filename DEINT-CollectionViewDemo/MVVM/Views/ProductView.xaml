@@ -17,6 +17,7 @@
                 SelectedItems="{Binding ProductoSeleccionado}"
             -->
             <CollectionView 
+                SelectionChanged="CollectionView_SelectionChanged"
                 SelectionChangedCommand="{Binding ProductChanged}"
                 SelectedItem="{Binding ProductoSeleccionado}"
                 SelectionMode="Single"
